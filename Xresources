@@ -1,3 +1,57 @@
+
+! General
+
+
+Xft.dpi:        260
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+Xft.autohint:   false
+Xft.lcdfilter:  lcddefault
+
+URxvt*font:           xft:Inconsolata\ for\ Powerline:size=9
+URxvt.iconFile:       /usr/share/icons/Humanity/apps/64/terminal.svg
+URxvt.saveLines: 20000
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.scrollBar_floating: false
+URxvt.scrollstyle: rxvt
+
+!-*- Perl extensions -*-
+!URxvt.perl-ext-common: default,selection-to-clipboard,pasta,matcher,keyboard-select
+URxvt.perl-ext-common: default,clipboard,keyboard-select,url-select,matcher
+!URxvt.keysym.M-u:     perl:url-select:select_next
+URxvt.url-launcher:   /usr/bin/firefox
+URxvt.underlineURLs:  True
+URxvt.matcher.button: 1
+!URxvt.keysym.M-Escape:perl:keyboard-select:activate
+!URxvt.keysym.Control-Shift-V:     perl:pasta:paste
+! Comment this if you don not want copy when text is selected
+URxvt.clipboard.autocopy: true
+
+! Extensions
+URxvt.urlLauncher: xdg-open
+URxvt.urlButton: 1
+!URxvt.underlineURLs: True
+
+URxvt.copyCommand:  xclip -i -selection clipboard
+URxvt.pasteCommand: xclip -o -selection clipboard
+
+! Keybindings
+URxvt.keysym.Mod4-c: perl:clipboard:copy
+URxvt.keysym.Mod4-v: perl:clipboard:paste
+URxvt.keysym.Mod4-C-v: perl:clipboard:paste_escaped
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.C-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-u: perl:url-select:select_next
+! Solaraized dark
+
+
+
 #define S_base03        #002b36
 #define S_base02        #073642
 #define S_base01        #586e75

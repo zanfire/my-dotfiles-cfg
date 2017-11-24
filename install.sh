@@ -7,7 +7,7 @@ echo "-------------------------"
 echo "| INSTALL script        |"
 echo "-------------------------"
 echo " "
-echo "This script will substitute dotfiles folder."
+echo "This script will substitute dotfiles files."
 echo " "
 
 read -p "Are you sure? (Y/n) " -n 1 -r
@@ -26,12 +26,16 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 TMUXRC=$HOME/.tmux.conf
 
-if [ -e "$TMUXRC" ] ; then
-  rm -i "$VIMRC"
+function replace {
+if [ -e "$1" ] ; then
+  rm -i "$1"
 fi
 
-pushd ~ > /dev/null
-ln -v -s $DIR/tmux.conf $TMUXRC
+  ln -v -s $2 $1
+}
+
+replace $TMUXRC $DIR/tmux.conf
+replace $HOME/.Xresources $DIR/Xresources
 
 echo " "
 echo "Done."
