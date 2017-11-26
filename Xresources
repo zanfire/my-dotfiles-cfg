@@ -2,7 +2,7 @@
 ! General
 
 
-Xft.dpi:        260
+Xft.dpi:        200
 Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.hinting:    true
